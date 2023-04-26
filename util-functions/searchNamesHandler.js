@@ -1,9 +1,14 @@
-export default function searchNames({ nameInput, originalUserList, setUsers }) {
+export default function searchNames({
+  nameInput,
+  originalUserList,
+  setUsers,
+  users,
+}) {
   if (!nameInput || nameInput.trim() === "") {
     setUsers(originalUserList);
-    return;
+    // return;
   }
-  const filteredUsers = originalUserList.filter(
+  const filteredUsers = users.filter(
     (user) =>
       user.name.first.toLowerCase().includes(nameInput.toLowerCase()) ||
       user.name.last.toLowerCase().includes(nameInput.toLowerCase()) ||
@@ -11,6 +16,7 @@ export default function searchNames({ nameInput, originalUserList, setUsers }) {
         nameInput.toLowerCase().replaceAll(" ", "")
       )
   );
-  setUsers(filteredUsers);
+  setUsers(filteredUsers); 
   console.log(filteredUsers);
 }
+ 

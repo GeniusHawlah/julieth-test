@@ -6,11 +6,25 @@ import filterByAge from "../util-functions/filterByAgeHandler";
 import filterByGender from "../util-functions/filterByGenderHandler";
 import filterByNationality from "../util-functions/filterByNationality";
 import searchNames from "../util-functions/searchNamesHandler";
+import AllCtx from "../util-functions/allCtx";
 
 export default function Home(props) {
-  const [users, setUsers] = useState([]);
-  const [originalUserList, setOriginalUserList] = useState([]);
+  const {
+    users,
+    setUsers,
+    originalUserList,
+    setOriginalUserList,
+    nameInput,
+    setNameInput,
+  } = AllCtx();
+
+  // const [users, setUsers] = useState([]);
+  // const [originalUserList, setOriginalUserList] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [nameInput, setNameInput] = useState('')
+  const [selectedAgeRange, setSelectedAgeRange] = useState([]);
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedNationality, setSelectedNationality] = useState("");
 
   useEffect(() => {
     async function fetchUsers() {
@@ -46,13 +60,13 @@ export default function Home(props) {
   return (
     <div className="font-sora text-[1.2rem] px-5 py-10 ">
       {/* SEARCH BAR */}
-      <SearchBar originalUserList={originalUserList} setUsers={setUsers} />
+      <SearchBar />
 
       {/* FILTERS */}
-      <Filters originalUserList={originalUserList} setUsers={setUsers} />
+      <Filters />
 
       {/* USERS */}
-      <Users users={users} />
+      <Users />
 
       {users.length === 0 && (
         <div className="mt-20 text-center text-red-600">

@@ -1,6 +1,9 @@
 import React from 'react'
+import AllCtx from '../util-functions/allCtx';
 
-function Users({users}) {
+function Users() {
+  const {users} = AllCtx()
+
   return (
       <div>
               { users.length > 0 &&   <ul className="  mt-10 space-y-2 ">

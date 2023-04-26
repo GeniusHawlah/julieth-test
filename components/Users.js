@@ -5,7 +5,7 @@ function Users({users}) {
       <div>
               { users.length > 0 &&   <ul className="  mt-10 space-y-2 ">
         {users.map((user, i) => (
-          <li>
+          <li key={i}>
             {i + 1}. {user.name.first} {user.name.last.toUpperCase()}{" "}
             <span className="text-sm">
               ({user.gender},{" "}

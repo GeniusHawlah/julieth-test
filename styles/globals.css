@@ -1,0 +1,76 @@
+@tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: whitesmoke;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} */
+
+.gen-padding {
+  @apply px-5 md:px-10 lg:px-[105px] text-[20px];
+}
+/* 
+.phoneInputInput {
+   border: none !important
+} */
+
+/* TO DISABLE DIV  */
+div[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+p[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+form[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+  background: #8e8a8a;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../public/fonts/Sora-VariableFont_wght.eot");
+  src: url("../public/fonts/Sora-VariableFont_wght.eot?#iefix")
+      format("embedded-opentype"),
+    url("../public/fonts/Sora-VariableFont_wght.woff2") format("woff2"),
+    url("../public/fonts/Sora-VariableFont_wght.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

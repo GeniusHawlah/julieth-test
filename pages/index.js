@@ -44,7 +44,7 @@ export default function Home(props) {
   }, []);
 
   return (
-    <div className="font-sora text-[1.2rem] px-10 py-10 ">
+    <div className="font-sora text-[1.2rem] px-5 py-10 ">
       {/* SEARCH BAR */}
       <SearchBar originalUserList={originalUserList} setUsers={setUsers} />
 
